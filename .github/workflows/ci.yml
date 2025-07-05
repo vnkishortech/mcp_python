@@ -23,9 +23,12 @@ jobs:
       - name: Lint with flake8
         run: |
           flake8 mcp_server/ --max-line-length=120
-      - name: Run MCP server (startup check)
+      - name: Run MCP server (run for 1 hour, then stop)
         run: |
-          python mcp_server/server.py
+          python mcp_server/server.py &
+          SERVER_PID=$!
+          sleep 3600
+          kill $SERVER_PID
       - name: Run tests
         run: |
           echo "No tests yet. Add tests in the tests/ directory."
