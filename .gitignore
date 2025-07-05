@@ -1,0 +1,16 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+.env.*
+*.sqlite3
+.DS_Store
+.idea/
+.vscode/
+# VS Code settings and history
+.history/
