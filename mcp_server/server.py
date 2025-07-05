@@ -5,6 +5,7 @@ import os
 
 PAPER_DIR = "papers"
 
+
 class MCPServer:
     def search_papers(self, topic: str, max_results: int = 5) -> List[str]:
         client = arxiv.Client()
@@ -52,6 +53,7 @@ class MCPServer:
                     except (FileNotFoundError, json.JSONDecodeError):
                         continue
         return f"There's no saved information related to paper {paper_id}."
+
 
 if __name__ == "__main__":
     server = MCPServer()
